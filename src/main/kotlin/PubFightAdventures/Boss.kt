@@ -1,0 +1,4 @@
+package PubFightAdventures
+
+class Boss {
+}
