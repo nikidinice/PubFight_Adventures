@@ -91,16 +91,16 @@ fun intro() {
             break
     }
     println("        \n" +
-            "            Hallo Partymate…*mhm*.. ich meine FIGHTER! \n" +
+            "            Hallo Partymate ..*mhm*.. ich meine FIGHTER! \n" +
             "            Nach einer durchzechten Partynacht mit deinen Freunden seid ihr in diesem einen zwielichtigen Schuppen gelandet, an dem ihr sonst immer vorbeilauft.\n" +
-            "            An dem Außenschild stand „1 Sieg - eine Flasche UMSONST“… \n" +
-            "            dabei konntet ihr nicht ahnen, dass ihr in einem \n" +
+            "            An dem Außenschild stand schließlich „1 Sieg - eine Flasche UMSONST“ geschrieben… \n" +
             "            \n" +
             "            ╔═╗┬┌─┐┬ ┬┌┬┐┌─┐┬  ┬ ┬┌┐    ╔═╗┬ ┬┌┐  \n" +
             "            ╠╣ ││ ┬├─┤ │ │  │  │ │├┴┐───╠═╝│ │├┴┐ \n" +
             "            ╚  ┴└─┘┴ ┴ ┴ └─┘┴─┘└─┘└─┘   ╩  └─┘└─┘ \n" +
             "            \n" +
-            "            gelandet seid!! \n" +
+            "            ...das war das Ladenschild...\n" +
+            "            ...welches die Jungs übersehen hatten...\n" +
             "            ")
     abschnitt()
 }
