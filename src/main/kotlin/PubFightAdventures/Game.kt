@@ -1,0 +1,5 @@
+package PubFightAdventures
+
+class Game {
+
+}

@@ -1,4 +1,17 @@
 package PubFightAdventures
 
-class Hero {
+open class Hero(var name: String, var hp: Int) {
+
+    fun attack(){
+
+    }
+
+    fun heal(){
+
+    }
+
+    fun supplement(){
+
+    }
+
 }
