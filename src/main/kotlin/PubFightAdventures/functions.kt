@@ -29,12 +29,13 @@ fun randomDamageEnemy(): Int {
 }
 
 fun criticalHit(damage: Int): Int {
-    val chance = Random.nextInt(1, 100) // Zufällige Gleitkommazahl zwischen 0 und 1
-    val multiplier = 1.5 // Schadensmultiplikator
+
+    val chance = Random.nextInt(1, 100)
+    val multiplier = 1.5
+
     return if (chance <= 5) {
-        // 5% Chance auf Schadensmultiplikator (z.B. x1.5)
         val criticalDamage = (damage * multiplier).toInt()
-        println("${RED}Kritischer Treffer!$RESET") // Nachricht in der Konsole ausgeben
+        println("${RED}Kritischer Treffer!$RESET")
         criticalDamage
     } else {
         damage
@@ -50,26 +51,26 @@ fun simpleFight() {                                         // Kampf-Logik verst
     var playerHP = 1500
     var enemyHP = 4000
     var round = 1
-    val healpotion = 50
+    val healpotion = 100
 
     while (playerHP > 0 && enemyHP > 0 && round < 300) {
         println("$YELLOW- - - Fight Status - - -$RESET")
-        println("Der Held hat $GREEN$playerHP$RESET Lebenspunkte")
-        println("Der Drache hat $RED$enemyHP$RESET Lebenspunkte")
+        println("Der Säufer hat $GREEN$playerHP$RESET Lebenspunkte")
+        println("Der Kneipenboss hat $RED$enemyHP$RESET Lebenspunkte")
         println("Schreib $YELLOW'a'$RESET für Angriff oder $GREEN'h'$RESET um dich zu heilen")
+
+        //Angriffskraft der Spieler um Funktion criticalHit erweitert
+        val heroDamage = criticalHit(randomDamageHero())
+        val enemyDamage = criticalHit(randomDamageEnemy())
 
         //Entscheidung des Spielers
         var eingabe = readln()
-        var enemyDamage = enemyHP.random()
+        clearConsole()
 
         //Entscheidungen von Spieler
         if (eingabe == "a") {
-            clearConsole()
 
             yourturnVisual()
-
-            val heroDamage = criticalHit(randomDamageHero())
-            val enemyDamage = criticalHit(randomDamageEnemy())
 
             //Zug des Spielers
             enemyHP -= heroDamage
@@ -105,10 +106,10 @@ fun simpleFight() {                                         // Kampf-Logik verst
     }
     if (playerHP <= 0) {
         abschnitt()
-        println("Du hast das Spiel verloren. Der Drache gewinnt!")
+        println("Du hast das Spiel verloren. Der Kneipenboss gewinnt!")
     } else if (enemyHP <= 0) {
         abschnitt()
-        println("Du hast das Spiel gewonnen. Der Drache wurde besiegt!")
+        println("Du hast das Spiel gewonnen. Der Kneipenboss wurde besiegt!")
     } else {
         abschnitt()
         println("Das Spiel ist nach $round Runden beendet.")
