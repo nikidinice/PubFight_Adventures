@@ -3,12 +3,12 @@ package PubFightAdventures
 import kotlin.random.Random
 
 /**
- * Hier bündel ich alle Funktionen, die zum Spiel gehören, um die Übersichtlichkeit zu gewährleisten
+ * Hier bündel ich alle Funktionen, die zum Spiel gehören, um die Übersichtlichkeit in der Main zu gewährleisten
  */
 
 //TODO: Background Functions
 
-fun clearConsole() {
+fun clearConsole() {                                            //Erstellt 50 leere printlines, um die Konsole aufzuräumen
     for (i in 1..50) {
         println("")
     }
@@ -20,6 +20,10 @@ fun abschnitt() {
     }
 }
 
+
+
+
+
 //TODO: Random-Schaden & Critical Hit
 fun randomDamageHero(): Int {
     return (300..400).random()
@@ -29,12 +33,11 @@ fun randomDamageEnemy(): Int {
 }
 
 fun criticalHit(damage: Int): Int {
-
-    val chance = Random.nextInt(1, 100)
+    val chance = Random.nextInt(1, 100)                 //1. Step: Random Zahl zwischen 1 & 100 generieren
     val multiplier = 1.5
 
-    return if (chance <= 5) {
-        val criticalDamage = (damage * multiplier).toInt()
+    return if (chance <= 5) {                                          //2. Step: if-Schleife, falls Zahl 5 oder drunter liegt (5% Chance)
+        val criticalDamage = (damage * multiplier).toInt()         //3. Step: Wenns eintritt, wird Schaden 1.5x erhöht
         println("${RED}Kritischer Treffer!$RESET")
         criticalDamage
     } else {
@@ -43,9 +46,13 @@ fun criticalHit(damage: Int): Int {
 }
 
 
-//TODO: Simple Kampf-Mechanik
 
-fun simpleFight() {                                         // Kampf-Logik verstehen
+
+
+
+
+//TODO: Simple Kampf-Mechanik
+fun simpleFight() {                                         // Kampf-Logik verstehen - simpel ohne Klassen oder komplexe Skills
 
     //Kämpfer Stats, Items nützliche Funktionen
     var playerHP = 1500
@@ -61,7 +68,8 @@ fun simpleFight() {                                         // Kampf-Logik verst
         println("$YELLOW|$RESET                                                                       $YELLOW|$RESET")
         println("$YELLOW|$RESET      Schreib $YELLOW'a'$RESET für Angriff oder $GREEN'h'$RESET um dich zu heilen               $YELLOW|$RESET")
         println("$YELLOW`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'$RESET")
-
+        println("")
+        println("")
 
         //Entscheidung des Spielers
         var eingabe = readln()
@@ -72,7 +80,8 @@ fun simpleFight() {                                         // Kampf-Logik verst
 
             yourturnVisual()
 
-            //Angriffskraft der Spieler um Funktion criticalHit erweitert. Ab v.36 in die if gepackt, weil die Meldung sonst unter den Fight-Stats kommt??
+            //Angriffskraft der Spieler um Funktion criticalHit erweitert.
+            //Ab v.36 in die if gepackt, weil die critHit-Meldung sonst unter den Fight-Stats kommt??
             val heroDamage = criticalHit(randomDamageHero())
             val enemyDamage = criticalHit(randomDamageEnemy())
 
@@ -85,7 +94,7 @@ fun simpleFight() {                                         // Kampf-Logik verst
             enemyturnVisual()
 
             //Zug des Gegners
-            playerHP -= criticalHit(randomDamageEnemy())
+            playerHP -= enemyDamage
             println("                Der Gegner hat dich mit $enemyDamage Schaden verwundet")
             Thread.sleep(1000)
             round++
@@ -99,11 +108,10 @@ fun simpleFight() {                                         // Kampf-Logik verst
             enemyturnVisual()
 
             //Angriffskraft der Spieler um Funktion criticalHit erweitert
-            val heroDamage = criticalHit(randomDamageHero())
             val enemyDamage = criticalHit(randomDamageEnemy())
 
             //Angriff des Gegners
-            playerHP -= criticalHit(randomDamageEnemy())
+            playerHP -= enemyDamage
             println("                Der Gegner hat dich mit $enemyDamage Schaden verwundet")
             Thread.sleep(1000)
             round++
@@ -136,8 +144,5 @@ fun simpleFight() {                                         // Kampf-Logik verst
         abschnitt()
         println("Das Spiel ist nach $round Runden beendet.")
     }
-}
-private fun Int.random(): Any {
-    return Int
 }
 
