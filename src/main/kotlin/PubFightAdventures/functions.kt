@@ -22,10 +22,10 @@ fun abschnitt() {
 
 //TODO: Random-Schaden & Critical Hit
 fun randomDamageHero(): Int {
-    return (160..200).random()
+    return (300..400).random()
 }
 fun randomDamageEnemy(): Int {
-    return (50..70).random()
+    return (120..150).random()
 }
 
 fun criticalHit(damage: Int): Int {
@@ -72,7 +72,7 @@ fun simpleFight() {                                         // Kampf-Logik verst
 
             yourturnVisual()
 
-            //Angriffskraft der Spieler um Funktion criticalHit erweitert
+            //Angriffskraft der Spieler um Funktion criticalHit erweitert. Ab v.36 in die if gepackt, weil die Meldung sonst unter den Fight-Stats kommt??
             val heroDamage = criticalHit(randomDamageHero())
             val enemyDamage = criticalHit(randomDamageEnemy())
 
@@ -118,7 +118,20 @@ fun simpleFight() {                                         // Kampf-Logik verst
         println("Du hast das Spiel verloren. Der Kneipenboss gewinnt!")
     } else if (enemyHP <= 0) {
         abschnitt()
-        println("Du hast das Spiel gewonnen. Der Kneipenboss wurde besiegt!")
+        println("$YELLOW                ███████ ██    ██ ███████ ███████     ██    ██ ███    ███ ███████  ██████  ███    ██ ███████ ████████                \n" +
+                "                ██      ██    ██ ██      ██          ██    ██ ████  ████ ██      ██    ██ ████   ██ ██         ██                   \n" +
+                "                ███████ ██    ██ █████   █████       ██    ██ ██ ████ ██ ███████ ██    ██ ██ ██  ██ ███████    ██                   \n" +
+                "                     ██ ██    ██ ██      ██          ██    ██ ██  ██  ██      ██ ██    ██ ██  ██ ██      ██    ██                   \n" +
+                "                ███████  ██████  ██      ██           ██████  ██      ██ ███████  ██████  ██   ████ ███████    ██                   \n" +
+                "                                                                                                                                    \n" +
+                "                                                                                                                                    \n" +
+                "${GREEN}██████  ██    ██     ██   ██  █████  ███████ ████████      ██████  ███████ ██     ██  ██████  ███    ██ ███    ██ ███████ ███    ██ \n" +
+                "██   ██ ██    ██     ██   ██ ██   ██ ██         ██        ██       ██      ██     ██ ██    ██ ████   ██ ████   ██ ██      ████   ██ \n" +
+                "██   ██ ██    ██     ███████ ███████ ███████    ██        ██   ███ █████   ██  █  ██ ██    ██ ██ ██  ██ ██ ██  ██ █████   ██ ██  ██ \n" +
+                "██   ██ ██    ██     ██   ██ ██   ██      ██    ██        ██    ██ ██      ██ ███ ██ ██    ██ ██  ██ ██ ██  ██ ██ ██      ██  ██ ██ \n" +
+                "██████   ██████      ██   ██ ██   ██ ███████    ██         ██████  ███████  ███ ███   ██████  ██   ████ ██   ████ ███████ ██   ████ \n" +
+                "                                                                                                                                    \n" +
+                "                                                                                                                                    $RESET \n")
     } else {
         abschnitt()
         println("Das Spiel ist nach $round Runden beendet.")
