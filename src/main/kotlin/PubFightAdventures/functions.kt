@@ -51,7 +51,7 @@ fun simpleFight() {                                         // Kampf-Logik verst
     var playerHP = 1500
     var enemyHP = 4000
     var round = 1
-    val healpotion = 100
+    val healpotion = 200
 
     while (playerHP > 0 && enemyHP > 0 && round < 300) {
         println("$YELLOW.-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Fight Stats -=-=-=-=-=-=-=-=-=-=-=-=-=-=-.$RESET")
