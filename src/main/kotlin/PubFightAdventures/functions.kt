@@ -54,23 +54,27 @@ fun simpleFight() {                                         // Kampf-Logik verst
     val healpotion = 100
 
     while (playerHP > 0 && enemyHP > 0 && round < 300) {
-        println("$YELLOW- - - Fight Status - - -$RESET")
-        println("Der Säufer hat $GREEN$playerHP$RESET Lebenspunkte")
-        println("Der Kneipenboss hat $RED$enemyHP$RESET Lebenspunkte")
-        println("Schreib $YELLOW'a'$RESET für Angriff oder $GREEN'h'$RESET um dich zu heilen")
+        println("$YELLOW.-=-=-=-=-=-=-=-=-=-=-=-=-=-=- Fight Stats -=-=-=-=-=-=-=-=-=-=-=-=-=-=-.$RESET")
+        println("$YELLOW|$RESET                                                                       $YELLOW|$RESET")
+        println("$YELLOW|$RESET Der Säufer hat $GREEN$playerHP$RESET Lebenspunkte                                      $YELLOW|$RESET")
+        println("$YELLOW|$RESET Der Kneipenboss hat $RED$enemyHP$RESET Lebenspunkte                                 $YELLOW|$RESET")
+        println("$YELLOW|$RESET                                                                       $YELLOW|$RESET")
+        println("$YELLOW|$RESET      Schreib $YELLOW'a'$RESET für Angriff oder $GREEN'h'$RESET um dich zu heilen               $YELLOW|$RESET")
+        println("$YELLOW`-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-'$RESET")
 
-        //Angriffskraft der Spieler um Funktion criticalHit erweitert
-        val heroDamage = criticalHit(randomDamageHero())
-        val enemyDamage = criticalHit(randomDamageEnemy())
 
         //Entscheidung des Spielers
         var eingabe = readln()
-        clearConsole()
 
         //Entscheidungen von Spieler
         if (eingabe == "a") {
+            clearConsole()
 
             yourturnVisual()
+
+            //Angriffskraft der Spieler um Funktion criticalHit erweitert
+            val heroDamage = criticalHit(randomDamageHero())
+            val enemyDamage = criticalHit(randomDamageEnemy())
 
             //Zug des Spielers
             enemyHP -= heroDamage
@@ -84,6 +88,7 @@ fun simpleFight() {                                         // Kampf-Logik verst
             playerHP -= criticalHit(randomDamageEnemy())
             println("                Der Gegner hat dich mit $enemyDamage Schaden verwundet")
             Thread.sleep(1000)
+            round++
         }
         else if (eingabe == "h") {
 
@@ -93,15 +98,19 @@ fun simpleFight() {                                         // Kampf-Logik verst
 
             enemyturnVisual()
 
+            //Angriffskraft der Spieler um Funktion criticalHit erweitert
+            val heroDamage = criticalHit(randomDamageHero())
+            val enemyDamage = criticalHit(randomDamageEnemy())
+
             //Angriff des Gegners
             playerHP -= criticalHit(randomDamageEnemy())
             println("                Der Gegner hat dich mit $enemyDamage Schaden verwundet")
             Thread.sleep(1000)
+            round++
         } else {
             println("Du hast dich vertippt..")
         }
         abschnitt()
-        round++
         println("Runde: $round")
     }
     if (playerHP <= 0) {

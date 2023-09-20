@@ -91,16 +91,16 @@ fun intro() {
             break
     }
     println("        \n" +
-            "            Hallo Partymate ..*mhm*.. ich meine FIGHTER! \n" +
-            "            Nach einer durchzechten Partynacht mit deinen Freunden seid ihr in diesem einen zwielichtigen Schuppen gelandet, an dem ihr sonst immer vorbeilauft.\n" +
-            "            An dem Außenschild stand schließlich „1 Sieg - eine Flasche UMSONST“ geschrieben… \n" +
-            "            \n" +
-            "            ╔═╗┬┌─┐┬ ┬┌┬┐┌─┐┬  ┬ ┬┌┐    ╔═╗┬ ┬┌┐  \n" +
-            "            ╠╣ ││ ┬├─┤ │ │  │  │ │├┴┐───╠═╝│ │├┴┐ \n" +
-            "            ╚  ┴└─┘┴ ┴ ┴ └─┘┴─┘└─┘└─┘   ╩  └─┘└─┘ \n" +
-            "            \n" +
-            "            ...das war das Ladenschild...\n" +
-            "            ...welches die Jungs übersehen hatten...\n" +
+            "$RED ██▓  $RESET          Hallo Partymate ..*mhm*.. ich meine FIGHTER! \n" +
+            "$RED▓██▒  $RESET          Nach einer durchzechten Partynacht mit deinen Freunden seid ihr in diesem einen zwielichtigen Schuppen gelandet, an dem ihr sonst immer vorbeilauft.\n" +
+            "$RED▒██▒  $RESET          An dem Außenschild stand schließlich „1 Sieg - eine Flasche UMSONST“ geschrieben… \n" +
+            "$RED░██░  $RESET          \n" +
+            "$RED░██░  $RESET          ╔═╗┬┌─┐┬ ┬┌┬┐┌─┐┬  ┬ ┬┌┐    ╔═╗┬ ┬┌┐  \n" +
+            "$RED░▓    $RESET          ╠╣ ││ ┬├─┤ │ │  │  │ │├┴┐───╠═╝│ │├┴┐ \n" +
+            "$RED ▒ ░  $RESET          ╚  ┴└─┘┴ ┴ ┴ └─┘┴─┘└─┘└─┘   ╩  └─┘└─┘ \n" +
+            "$RED ▒ ░  $RESET          \n" +
+            "$RED ░    $RESET          ...das war das Ladenschild...\n" +
+            "                ...welches die Jungs übersehen hatten...\n" +
             "            ")
     abschnitt()
 }
