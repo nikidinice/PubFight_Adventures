@@ -13,7 +13,8 @@ class Fighter(
      * Die Fähigkeit Fist of Zen benötigt eine Ladephase von einer Runde.
      * Dies blockiert zwar weitere Aktionen in einer Runde, fügt jedoch erheblichen Schaden zu
      */
-    var fistOfZen = Skill("Fist of Zen", 40..60, 2, false)          //ab 0.5 Fähigkeiten als Klassen
+
+    var fistOfZen = Skill("Fist of Zen", 80..120, 2, false)          //ab 0.5 Fähigkeiten als Klassen
 
 
     /**
@@ -40,5 +41,6 @@ class Fighter(
         fistOfZen,
         bronzeneKniescheibe,
         tokat,
-        booze)
+        booze
+    )
 }
