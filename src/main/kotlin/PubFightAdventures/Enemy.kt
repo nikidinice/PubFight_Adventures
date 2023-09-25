@@ -1,4 +1,4 @@
 package PubFightAdventures
 
-class Enemy {
+open class Enemy(var name: String, var hp: Int) {
 }

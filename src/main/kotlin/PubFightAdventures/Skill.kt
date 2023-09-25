@@ -1,20 +1,19 @@
 package PubFightAdventures
 
-import kotlin.random.Random
-class Skill(val skill: String, val damageRange: IntRange)
+class Skill(
+    private val name: String,
+    var damageRange: IntRange,
+    var uses: Int,
+    var charge: Boolean
+) {
 
-fun main(){
-
-//Funktion die in einem Zahlenbereich eine zufällige Zahl wiedergibt
-fun randomSkillSchaden(skill: Skill): Int {
-    return skill.damageRange.random()
-}
-
-// Eine Liste von Skills mit ihren jeweiligen Schadensbereichen
-val skills = listOf(
-    Skill("Heldenpunch", 300..400),
-    Skill("Boss Schelle", 120..150)
-)
-
-println(randomSkillSchaden(skills[0]))
+    fun use(enemy: Enemy) {                                                         //Ähnlich dem AP-System aus Pokemon. Jeder Angriff kann nur begrenzt oft benutzt werden. Besseres Balancing für starke Angriffe
+        if (this.uses > 0) {
+            enemy.hp -= criticalHit(damageRange.random())
+            uses--
+            println("$name trifft $enemy. Diese Fähigkeit ist noch $uses mal nutzbar.")
+        } else {
+            println("$name kann nicht mehr benutzt werden.")
+        }
+    }
 }
