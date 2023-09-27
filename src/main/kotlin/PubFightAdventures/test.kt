@@ -74,58 +74,58 @@ package PubFightAdventures
 //        }
 //    }
 //}
-
-fun main() {                                                        //Ansätze von Menü & Wahl - objektorientiert
-
-    var player1 = Fighter("", 120)
-    var player2 = Trickster("", 110)
-    var player3 = Ranger("", 100)
-    var heroes = listOf(player1, player2, player3)
-
-    var enemy1 = Boss("Kneipenboss", 250)
-    var enemy2 = Sideboss("Couseng", 100)
-    var enemies = listOf(enemy1, enemy2)
-
-    println("Es gibt 3 verschiedene Rollen!\nGebe dem Fighter einen Namen:")
-    player1.name = readln()
-    println("Gebe dem Trickster einen Namen:")
-    player2.name = readln()
-    println("Gebe dem Ranger einen Namen:")
-    player3.name = readln()
-    println()
-    println("Dein Team")
-    println("__________")
-    println("Fighter: ${player1.name}   |   Trickster: ${player2.name}   |   Ranger: ${player3.name}")
-    println()
-
-    while (player1.hp > 0 && player2.hp > 0 && player3.hp > 0 && enemy1.hp > 0 && enemy2.hp > 0) {
-        println(
-            "1: Boss | HP: ${enemy1.hp}\n" +
-                    "2: Sideboss | HP: ${enemy2.hp}\n" +
-                    "Wen möchtest du angreifen? Schreibe 1 oder 2"
-        )
-
-        var input = readln()
-        var decision = mutableListOf<Enemy>()
-
-        for (char in input) {
-            when (char) {
-                '1' -> decision.add(enemy1)
-                '2' -> decision.add(enemy2)
-                else -> println("$input gibt es nicht. Bitte wähle 1 oder 2.")
-            }
-        }
-
-        for (enemy in decision) {
-            player1.fistOfZen.useSkill(player1.fistOfZen, enemy)
-            println("${enemy.name} trifft ${enemy.name} mit ${player1.fistOfZen.useSkill(player1.fistOfZen, enemy).} Schaden.")
-        }
-        if (player1.hp <= 0 && player2.hp <= 0 && player3.hp <= 0) {
-            abschnitt()
-            println("Du hast das Spiel verloren. Der Kneipenboss gewinnt!")
-        } else if (enemy1.hp <= 0 && enemy2.hp <= 0) {
-            abschnitt()
-            println("Gewonnen Schweinebacke!")
-        }
-    }
-}
+//
+//fun main() {                                                        //Ansätze von Menü & Wahl - objektorientiert
+//
+//    var player1 = Fighter("", 120,1.0)
+//    var player2 = Trickster("", 110, 1)
+//    var player3 = Ranger("", 100, 1)
+//    var heroes = listOf(player1, player2, player3)
+//
+//    var enemy1 = Boss("Kneipenboss", 250)
+//    var enemy2 = Sideboss("Couseng", 100)
+//    var enemies = listOf(enemy1, enemy2)
+//
+//    println("Es gibt 3 verschiedene Rollen!\nBenenne den Fightern:")
+//    player1.name = readln()
+//    println("Benenne den Trickster:")
+//    player2.name = readln()
+//    println("Benenne den Ranger:")
+//    player3.name = readln()
+//    println()
+//    println("Dein Team")
+//    println("__________")
+//    println("Fighter: ${player1.name}   |   Trickster: ${player2.name}   |   Ranger: ${player3.name}")
+//    println()
+//
+//    while (player1.hp > 0 && player2.hp > 0 && player3.hp > 0 && enemy1.hp > 0 && enemy2.hp > 0) {
+//        println(
+//            "1: Boss | HP: ${enemy1.hp}\n" +
+//                    "2: Sideboss | HP: ${enemy2.hp}\n" +
+//                    "Wen möchtest du angreifen? Schreibe 1 oder 2"
+//        )
+//
+//        var input = readln()
+//        var decision = mutableListOf<Enemy>()
+//
+//        for (char in input) {
+//            when (char) {
+//                '1' -> decision.add(enemy1)
+//                '2' -> decision.add(enemy2)
+//                else -> println("$input gibt es nicht. Bitte wähle 1 oder 2.")
+//            }
+//        }
+//
+//        for (enemy in decision) {
+//            player1.fistOfZen.useSkill(player1.fistOfZen, enemy)
+//            println("${enemy.name} trifft ${enemy.name} mit ${player1.fistOfZen.useSkill(player1.fistOfZen, enemy)} Schaden.")
+//        }
+//        if (player1.hp <= 0 && player2.hp <= 0 && player3.hp <= 0) {
+//            abschnitt()
+//            println("Du hast das Spiel verloren. Der Kneipenboss gewinnt!")
+//        } else if (enemy1.hp <= 0 && enemy2.hp <= 0) {
+//            abschnitt()
+//            println("Gewonnen Schweinebacke!")
+//        }
+//    }
+//}

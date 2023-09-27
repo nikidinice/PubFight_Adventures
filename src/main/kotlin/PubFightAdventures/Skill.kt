@@ -1,22 +1,23 @@
 package PubFightAdventures
 
 class Skill(
-    private val name: String,
-    var damageRange: IntRange,
+    val name: String,
+    var damage: Double,
     var uses: Int,
-    var charge: Boolean
+    var charge: Boolean,
+    var charging: Boolean
 ) {
+    override fun toString(): String {
+        return name
+    }
 
-    open fun useSkill(
-        skill: Skill,
-        enemy: Enemy
-    ) {                                                         //Ähnlich dem AP-System aus Pokemon. Jeder Angriff kann nur begrenzt oft benutzt werden. Besseres Balancing für starke Angriffe
-        var damage = criticalHit(damageRange.random())
-        if (skill.charge) { // Der Skill muss aufgeladen werden
-            skill.charge = false // Der Skill wird aufgeladen
+    open val useSkill = { skill: Skill, enemy: Enemy ->
+        var damage = criticalHit(damage)
+        if (skill.charge) {
+            skill.charge = false
             println("${skill.name} wird aufgeladen.")
         } else if (skill.uses > 0) {
-            enemy.hp -= damage
+            enemy.hp -= damage.toInt()
             uses--
             println("$name trifft $enemy. Diese Fähigkeit ist noch $uses mal nutzbar.")
         } else {
