@@ -189,9 +189,7 @@ fun chooseTarget(enemies: List<Enemy>): Enemy {
         }
     }
 
-    // Eine Nachricht ausgeben, wenn die Eingabe ungültig ist
-    println("Ungültige Eingabe. Bitte wähle ein gültiges Ziel.")
+    println("Dieses Ziel gibt es nicht!")
 
-    // Die Funktion rekursiv aufrufen, bis eine gültige Eingabe eingegeben wird
     return chooseTarget(enemies)
 }

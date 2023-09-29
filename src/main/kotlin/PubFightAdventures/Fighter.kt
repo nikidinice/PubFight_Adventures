@@ -53,7 +53,7 @@ class Fighter(name: String, hp: Double, damage: Double, cursed: Boolean) : Hero(
 
     public fun attack() {
 
-        var skillNamen = fighterSkills
+        var skillNamen = fighterSkills                                                                                                                  //Auflistung der Angriffe des Fighters
         println("Wähle einen Angriff aus!")
         println(
             "1 für ${fighterSkills.elementAt(0)}                    \uD83D\uDDE1\uFE0F${
@@ -83,13 +83,13 @@ class Fighter(name: String, hp: Double, damage: Double, cursed: Boolean) : Hero(
             "4 für ${fighterSkills.elementAt(3)}                        \uD83C\uDF00      | Uses left: ${fighterSkills.elementAt(3).uses}"
         )
 
-        val eingabe = readln()
+        val eingabe = readln()                                                                                                                               //Auswahl des Spielers
         val index = eingabe.toInt() - 1
         clearConsole()
 
-        val target = chooseTarget(enemies)
-        val attacke = skillNamen.elementAt(index)
-        val schadenBerechnung: Double = calculateSkill(attacke, fighter)
+        val target = chooseTarget(enemies)                                          //Auswahl des Gegners
+        val attacke = skillNamen.elementAt(index)                                     //Angriff aus der Liste
+        val schadenBerechnung: Double = calculateSkill(attacke, fighter)                    //
         val schaden = criticalHit(schadenBerechnung)
 
         if (enemy1.rauchbombe.effect == true) {
