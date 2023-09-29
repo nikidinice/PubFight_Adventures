@@ -97,8 +97,8 @@ fun isBlockActive() {                                                    //Anfan
 }
 
 
-//TODO: Simple Kampf-Mechanik
-//fun simpleFight() {                                         // Kampf-Logik verstehen - simpel ohne Klassen oder komplexe Skills
+////TODO: Simple Kampf-Mechanik
+////fun simpleFight() {                                         // Kampf-Logik verstehen - simpel ohne Klassen oder komplexe Skills
 //
 //    //Kämpfer Stats, Items nützliche Funktionen
 //    var playerHP = 1500
@@ -128,8 +128,8 @@ fun isBlockActive() {                                                    //Anfan
 //
 //            //Angriffskraft der Spieler um Funktion criticalHit erweitert.
 //            //Ab v.36 in die if gepackt, weil die critHit-Meldung sonst unter den Fight-Stats kommt??
-//            val heroDamage = criticalHit(randomDamageHero())
-//            val enemyDamage = criticalHit(randomDamageEnemy())
+//            val heroDamage = criticalHit(randomDamageHero().toDouble())
+//            val enemyDamage = criticalHit(randomDamageEnemy().toDouble())
 //
 //            //Zug des Spielers
 //            enemyHP -= heroDamage

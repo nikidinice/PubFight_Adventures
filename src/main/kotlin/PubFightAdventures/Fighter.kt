@@ -89,8 +89,8 @@ class Fighter(name: String, hp: Double, damage: Double, cursed: Boolean) : Hero(
 
         val target = chooseTarget(enemies)                                          //Auswahl des Gegners
         val attacke = skillNamen.elementAt(index)                                     //Angriff aus der Liste
-        val schadenBerechnung: Double = calculateSkill(attacke, fighter)                    //
-        val schaden = criticalHit(schadenBerechnung)
+        val schadenBerechnung: Double = calculateSkill(attacke, fighter)                    //Verrechnet Schaden der Rollen mit den Skills - Wichtig für Buffs
+        val schaden = criticalHit(schadenBerechnung)                                //5%ige Krit-Chance
 
         if (enemy1.rauchbombe.effect == true) {
             enemy1.rauchbombe.effect = false

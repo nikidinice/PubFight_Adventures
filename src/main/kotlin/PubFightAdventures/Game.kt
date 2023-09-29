@@ -154,7 +154,7 @@ fun calculateSkill(skill: Skill, role: Hero): Double {      // Multipliziere den
 }
 
 
-fun isCursed(hero: Hero) {                                   // Abfrage ob ein Spieler verflucht ist
+fun isCursed(hero: Hero) {                                   // Abfrage, ob ein Spieler verflucht ist
     if (hero.cursed == true) {
         val schaden = hero.maxHp * 0.1
         hero.hp -= schaden
