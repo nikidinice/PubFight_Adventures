@@ -1,18 +1,8 @@
 package PubFightAdventures
-import kotlin.math.min
-open class Hero(var name: String, var hp: Double, var damage: Double) {
+open class Hero(var name: String, var hp: Double, var damage: Double, var cursed: Boolean) {
+
+
     var maxHp = hp
 
-    fun attack(){
-
-    }
-
-    fun heal(){
-
-    }
-
-    fun supplement(){
-
-    }
 
 }

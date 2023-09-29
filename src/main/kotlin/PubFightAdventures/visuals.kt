@@ -16,7 +16,6 @@ val farben = listOf(BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE)
 var Index = 0
 
 
-
 //TODO: MAIN ZUM TESTEN
 fun main() {
     intro()
@@ -26,7 +25,7 @@ fun intro() {
     clearConsole()
 
     println(
-                "██     ██ ███████ ██       ██████  ██████  ███    ███ ███████ \n" +
+        "██     ██ ███████ ██       ██████  ██████  ███    ███ ███████ \n" +
                 "██     ██ ██      ██      ██      ██    ██ ████  ████ ██      \n" +
                 "██  █  ██ █████   ██      ██      ██    ██ ██ ████ ██ █████   \n" +
                 "██ ███ ██ ██      ██      ██      ██    ██ ██  ██  ██ ██      \n" +
@@ -37,7 +36,7 @@ fun intro() {
     Thread.sleep(500)
 
     println(
-                "████████  ██████  \n" +
+        "████████  ██████  \n" +
                 "   ██    ██    ██ \n" +
                 "   ██    ██    ██ \n" +
                 "   ██    ██    ██ \n" +
@@ -50,7 +49,7 @@ fun intro() {
 
 
     println(
-            "$RED   ▄███████▄ ███    █▄  ▀█████████▄     ▄████████  ▄█     ▄██████▄     ▄█    █▄        ███                  \n" +
+        "$RED   ▄███████▄ ███    █▄  ▀█████████▄     ▄████████  ▄█     ▄██████▄     ▄█    █▄        ███                  \n" +
                 "  ███    ███ ███    ███   ███    ███   ███    ███ ███    ███    ███   ███    ███   ▀█████████▄              \n" +
                 "  ███    ███ ███    ███   ███    ███   ███    █▀  ███▌   ███    █▀    ███    ███      ▀███▀▀██              \n" +
                 "  ███    ███ ███    ███  ▄███▄▄▄██▀   ▄███▄▄▄     ███▌  ▄███         ▄███▄▄▄▄███▄▄     ███   ▀              \n" +
@@ -78,7 +77,7 @@ fun intro() {
 
         clearConsole()
         println(
-              "$color██████  ██    ██     ██████  ███████ ████████ ██████  ██ ████████ ████████ ███████ ████████     ██████  ██ ███████     ██████   █████  ██████  \n" +
+            "$color██████  ██    ██     ██████  ███████ ████████ ██████  ██ ████████ ████████ ███████ ████████     ██████  ██ ███████     ██████   █████  ██████  \n" +
                     "██   ██ ██    ██     ██   ██ ██         ██    ██   ██ ██    ██       ██    ██         ██        ██   ██ ██ ██          ██   ██ ██   ██ ██   ██ \n" +
                     "██   ██ ██    ██     ██████  █████      ██    ██████  ██    ██       ██    ███████    ██        ██   ██ ██ █████       ██████  ███████ ██████  \n" +
                     "██   ██ ██    ██     ██   ██ ██         ██    ██   ██ ██    ██       ██         ██    ██        ██   ██ ██ ██          ██   ██ ██   ██ ██   ██ \n" +
@@ -90,22 +89,28 @@ fun intro() {
         if (i >= 10)
             break
     }
-    println("        \n" +
-            "$RED ██▓  $RESET          Hallo Partymate ..*mhm*.. ich meine FIGHTER! \n" +
-            "$RED▓██▒  $RESET          Nach einer durchzechten Partynacht mit deinen Freunden seid ihr in diesem einen zwielichtigen Schuppen gelandet, an dem ihr sonst immer vorbeilauft.\n" +
-            "$RED▒██▒  $RESET          An dem Außenschild stand schließlich „1 Sieg - eine Flasche UMSONST“ geschrieben… \n" +
-            "$RED░██░  $RESET          \n" +
-            "$RED░██░  $RESET          ╔═╗┬┌─┐┬ ┬┌┬┐┌─┐┬  ┬ ┬┌┐    ╔═╗┬ ┬┌┐  \n" +
-            "$RED░▓    $RESET          ╠╣ ││ ┬├─┤ │ │  │  │ │├┴┐───╠═╝│ │├┴┐ \n" +
-            "$RED ▒ ░  $RESET          ╚  ┴└─┘┴ ┴ ┴ └─┘┴─┘└─┘└─┘   ╩  └─┘└─┘ \n" +
-            "$RED ▒ ░  $RESET          \n" +
-            "$RED ░    $RESET          ...das war das Ladenschild...\n" +
-            "                ...welches die Jungs übersehen hatten...\n" +
-            "            ")
+    println(
+        "        \n" +
+                "$RED ██▓  $RESET          Hallo Partymate ..*mhm*.. ich meine FIGHTER! \n" +
+                "$RED▓██▒  $RESET          Nach einer durchzechten Partynacht mit deinen Freunden seid ihr in diesem einen zwielichtigen Schuppen gelandet, an dem ihr sonst immer vorbeilauft.\n" +
+                "$RED▒██▒  $RESET          An dem Außenschild stand schließlich „1 Sieg - eine Flasche UMSONST“ geschrieben… \n" +
+                "$RED░██░  $RESET          \n" +
+                "$RED░██░  $RESET          ╔═╗┬┌─┐┬ ┬┌┬┐┌─┐┬  ┬ ┬┌┐    ╔═╗┬ ┬┌┐  \n" +
+                "$RED░▓    $RESET          ╠╣ ││ ┬├─┤ │ │  │  │ │├┴┐───╠═╝│ │├┴┐ \n" +
+                "$RED ▒ ░  $RESET          ╚  ┴└─┘┴ ┴ ┴ └─┘┴─┘└─┘└─┘   ╩  └─┘└─┘ \n" +
+                "$RED ▒ ░  $RESET          \n" +
+                "$RED ░    $RESET          ...das war das Ladenschild...\n" +
+                "                ...welches die Jungs übersehen hatten...\n" +
+                "            "
+    )
     abschnitt()
+    abschnitt()
+    println("$GREEN...TIPPE UM FORTZUFAHREN...                                                                                                                                                                                                                                $YELLOW a game by Nikita :^)$RESET ")
+    readln()
+    clearConsole()
 }
 
-fun yourturnVisual(){
+fun yourturnVisual() {
 
     println("${GREEN}██    ██  ██████  ██    ██ ██████      ████████ ██    ██ ██████  ███    ██ ")
     Thread.sleep(100)
@@ -123,7 +128,7 @@ fun yourturnVisual(){
 
 }
 
-fun enemyturnVisual(){
+fun enemyturnVisual() {
 
     println("${RED}███████ ███    ██ ███████ ███    ███ ██    ██     ████████ ██    ██ ██████  ███    ██ ")
     Thread.sleep(100)
@@ -143,38 +148,75 @@ fun enemyturnVisual(){
 
 }
 
-fun fighterVisual(){
-    println("${RED}███████ ██  ██████  ██   ██ ████████ ███████ ██████  \n" +
-            "██      ██ ██       ██   ██    ██    ██      ██   ██ \n" +
-            "█████   ██ ██   ███ ███████    ██    █████   ██████  \n" +
-            "██      ██ ██    ██ ██   ██    ██    ██      ██   ██ \n" +
-            "██      ██  ██████  ██   ██    ██    ███████ ██   ██ \n" +
-            "                                                     \n" +
-            "                                                     ")
+fun fighterVisual() {
+    println(
+        "${RED}███████ ██  ██████  ██   ██ ████████ ███████ ██████  \n" +
+                "██      ██ ██       ██   ██    ██    ██      ██   ██ \n" +
+                "█████   ██ ██   ███ ███████    ██    █████   ██████  \n" +
+                "██      ██ ██    ██ ██   ██    ██    ██      ██   ██ \n" +
+                "██      ██  ██████  ██   ██    ██    ███████ ██   ██ \n" +
+                "                                                     \n" +
+                "                                                     "
+    )
 }
 
-fun tricksterVisual(){
-    println("${YELLOW}████████ ██████  ██  ██████ ██   ██ ███████ ████████ ███████ ██████  \n" +
-            "   ██    ██   ██ ██ ██      ██  ██  ██         ██    ██      ██   ██ \n" +
-            "   ██    ██████  ██ ██      █████   ███████    ██    █████   ██████  \n" +
-            "   ██    ██   ██ ██ ██      ██  ██       ██    ██    ██      ██   ██ \n" +
-            "   ██    ██   ██ ██  ██████ ██   ██ ███████    ██    ███████ ██   ██ \n" +
-            "                                                                     \n" +
-            "                                                                     ")
+fun tricksterVisual() {
+    println(
+        "${YELLOW}████████ ██████  ██  ██████ ██   ██ ███████ ████████ ███████ ██████  \n" +
+                "   ██    ██   ██ ██ ██      ██  ██  ██         ██    ██      ██   ██ \n" +
+                "   ██    ██████  ██ ██      █████   ███████    ██    █████   ██████  \n" +
+                "   ██    ██   ██ ██ ██      ██  ██       ██    ██    ██      ██   ██ \n" +
+                "   ██    ██   ██ ██  ██████ ██   ██ ███████    ██    ███████ ██   ██ \n" +
+                "                                                                     \n" +
+                "                                                                     "
+    )
 }
 
-fun rangerVisual(){
-    println("${GREEN}██████   █████  ███    ██  ██████  ███████ ██████  \n" +
-            "██   ██ ██   ██ ████   ██ ██       ██      ██   ██ \n" +
-            "██████  ███████ ██ ██  ██ ██   ███ █████   ██████  \n" +
-            "██   ██ ██   ██ ██  ██ ██ ██    ██ ██      ██   ██ \n" +
-            "██   ██ ██   ██ ██   ████  ██████  ███████ ██   ██ \n" +
-            "                                                   \n" +
-            "                                                   ")
+fun rangerVisual() {
+    println(
+        "${GREEN}██████   █████  ███    ██  ██████  ███████ ██████  \n" +
+                "██   ██ ██   ██ ████   ██ ██       ██      ██   ██ \n" +
+                "██████  ███████ ██ ██  ██ ██   ███ █████   ██████  \n" +
+                "██   ██ ██   ██ ██  ██ ██ ██    ██ ██      ██   ██ \n" +
+                "██   ██ ██   ██ ██   ████  ██████  ███████ ██   ██ \n" +
+                "                                                   \n" +
+                "                                                   "
+    )
 }
 
-fun nameCharacterVisual(){
-    println("╔╗ ┌─┐┌┐┌┌─┐┌┐┌┌┐┌┌─┐  ┌┬┐┬┌─┐  ╦═╗┌─┐┬  ┬  ┌─┐┌┐┌\n" +
-            "╠╩╗├┤ │││├┤ ││││││├┤    │││├┤   ╠╦╝│ ││  │  ├┤ │││\n" +
-            "╚═╝└─┘┘└┘└─┘┘└┘┘└┘└─┘  ─┴┘┴└─┘  ╩╚═└─┘┴─┘┴─┘└─┘┘└┘")
+fun nameCharacterVisual() {
+    println(
+        "╔╗ ┌─┐┌┐┌┌─┐┌┐┌┌┐┌┌─┐  ┌┬┐┬┌─┐  ╦═╗┌─┐┬  ┬  ┌─┐┌┐┌\n" +
+                "╠╩╗├┤ │││├┤ ││││││├┤    │││├┤   ╠╦╝│ ││  │  ├┤ │││\n" +
+                "╚═╝└─┘┘└┘└─┘┘└┘┘└┘└─┘  ─┴┘┴└─┘  ╩╚═└─┘┴─┘┴─┘└─┘┘└┘"
+    )
 }
+
+fun gewonnenvisual() {
+    clearConsole()
+    println("$YELLOW                ███████ ██    ██ ███████ ███████     ██    ██ ███    ███ ███████  ██████  ███    ██ ███████ ████████")
+    Thread.sleep(100)
+    println("                ██      ██    ██ ██      ██          ██    ██ ████  ████ ██      ██    ██ ████   ██ ██         ██")
+    Thread.sleep(100)
+    println("                ███████ ██    ██ █████   █████       ██    ██ ██ ████ ██ ███████ ██    ██ ██ ██  ██ ███████    ██")
+    Thread.sleep(100)
+    println("                     ██ ██    ██ ██      ██          ██    ██ ██  ██  ██      ██ ██    ██ ██  ██ ██      ██    ██")
+    Thread.sleep(100)
+    println("                ███████  ██████  ██      ██           ██████  ██      ██ ███████  ██████  ██   ████ ███████    ██")
+    Thread.sleep(100)
+    println()
+    Thread.sleep(100)
+    println()
+    Thread.sleep(100)
+    println("${GREEN}██████  ██    ██     ██   ██  █████  ███████ ████████      ██████  ███████ ██     ██  ██████  ███    ██ ███    ██ ███████ ███    ██")
+    Thread.sleep(100)
+    println("██   ██ ██    ██     ██   ██ ██   ██ ██         ██        ██       ██      ██     ██ ██    ██ ████   ██ ████   ██ ██      ████   ██")
+    Thread.sleep(100)
+    println("██   ██ ██    ██     ███████ ███████ ███████    ██        ██   ███ █████   ██  █  ██ ██    ██ ██ ██  ██ ██ ██  ██ █████   ██ ██  ██")
+    Thread.sleep(100)
+    println("██   ██ ██    ██     ██   ██ ██   ██      ██    ██        ██    ██ ██      ██ ███ ██ ██    ██ ██  ██ ██ ██  ██ ██ ██      ██  ██ ██")
+    Thread.sleep(100)
+    println("██████   ██████      ██   ██ ██   ██ ███████    ██         ██████  ███████  ███ ███   ██████  ██   ████ ██   ████ ███████ ██   ████$RESET")
+    Thread.sleep(100)
+}
+

@@ -5,13 +5,13 @@ open class Inventory() {
     /**
      * Ein Heiltrank, der einen Helden um 50% seiner maximalen Lebenspunkte heilt
      */
-    var healthPotion = Skill("Heiltrank", 0.5, 3, false, false)
+    var healthPotion = Skill("Heiltrank", 0.5, 3, false, false, false, 0)
 
 
     /**
      * Ein Trank, der einem Helden die Schadenswerte dauerhaft um 10% erhöht
      */
-    var damagePotion = Skill("Schaden+", 1.1, 1, false, false)
+    var damagePotion = Skill("Schaden+", 1.25, 1, false, false, false, 0)
 
     public var inventory = listOf(
         healthPotion,
@@ -50,8 +50,24 @@ open class Inventory() {
                         )
                     }
 
-                    2 -> trickster.hp + (trickster.hp / 100 * healthPotion.damage)
-                    3 -> ranger.hp + (ranger.hp / 100 * healthPotion.damage)
+                    2 -> {
+                        trickster.hp += (trickster.maxHp * healthPotion.damage); healthPotion.uses -= 1
+                        if (trickster.hp > trickster.maxHp) {
+                            trickster.hp = trickster.maxHp
+                        }
+                        println(
+                            "${GREEN}Die Lebenspunkte von ${fighter.name} wurden um 50% seiner maximalen Lebenspunkte geheilt!$RESET\n\n"
+                        )
+                    }
+                    3 -> {
+                        ranger.hp += (ranger.maxHp * healthPotion.damage); healthPotion.uses -= 1
+                        if (ranger.hp > ranger.maxHp) {
+                            ranger.hp = ranger.maxHp
+                        }
+                        println(
+                            "${GREEN}Die Lebenspunkte von ${fighter.name} wurden um 50% seiner maximalen Lebenspunkte geheilt!$RESET\n\n"
+                        )
+                    }
                     else -> {
                         println(
                             "${RED}Falsche Eingabe!\n" +
@@ -82,10 +98,10 @@ open class Inventory() {
                     }
 
                     2 -> {
-                        trickster.damage += damagePotion.damage
+                        trickster.damage *= damagePotion.damage
                     }
 
-                    3 -> ranger.damage += damagePotion.damage
+                    3 -> ranger.damage *= damagePotion.damage
                     else -> println(
                         "${RED}Falsche Eingabe!\n" +
                                 "${RESET}Dieses Item hast du nicht!"

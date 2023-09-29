@@ -1,4 +1,4 @@
 package PubFightAdventures
 
-open class Enemy(var name: String, var hp: Double) {
+open class Enemy(name: String, hp: Double, damage: Double, cursed: Boolean) : Hero(name, hp, damage, cursed) {
 }

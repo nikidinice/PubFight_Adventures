@@ -4,12 +4,17 @@ package PubFightAdventures
  * BITTE DIE KONSOLE HOCHFAHREN & DAS SPIEL GENIEßEN!
  */
 fun main() {
-        intro()
+       intro()
 //    simpleFight()
     nameCharacter()
     clearConsole()
-    while (fighter.hp > 0 && trickster.hp > 0 && ranger.hp > 0 && enemy1.hp > 0 && enemy2.hp > 0) {
+    while ((fighter.hp > 0 || trickster.hp > 0 || ranger.hp > 0) && (enemy1.hp > 0 || enemy2.hp > 0)) {
+        isCursedAll(heroe)
+        rundenZaehler()
         gameStatus()
         playerAttack()
+        enemyAttack()
+        isHpBelowMin()
+        isGameOver()
     }
 }
