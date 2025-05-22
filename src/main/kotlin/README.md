@@ -7,6 +7,6 @@ Vorerst nutze ich diese ReadMe-Datei als Progressionstool.
 - [x] Visuals erstellt
 - [x] Simple Combat System & Inventar basierend auf Funktionen erstellt
 - [x] Critical-Hit System implementiert
-- [ ] Objektorientiertes Player- und Combat System & Inventar erstellt
-- [ ] Playertests & Bugfix
-- [ ] Präsentation erstellen
+- [x] Objektorientiertes Player- und Combat System & Inventar erstellt
+- [x] Playertests & Bugfix
+- [x] Präsentation erstellen
